@@ -1,4 +1,4 @@
-import { orders, addOrder, updateOrderStatus, calculateTotalRevenue, deleteOrder } from './orders.js';
+import { orders, addOrder, updateOrderStatus, calculateTotalRevenue, deleteOrder, displayOrders } from './orders.js';
 
 addOrder('Alice', [
   { name: 'Nasi Goreng', price: 20000 },
@@ -10,8 +10,8 @@ addOrder('Bob', [
   { name: 'Kopi', price: 10000 }
 ]);
 
-console.log(orders);
 
+displayOrders(orders);
 /**
  * Output yang diharapkan:
  * [
@@ -41,7 +41,7 @@ console.log(orders);
 updateOrderStatus(orders[0].id, 'Diproses');
 updateOrderStatus(orders[1].id, 'Selesai');
 
-// console.log(orders);
+displayOrders(orders);
 
 /**
  * Output yang diharapkan:
@@ -78,7 +78,7 @@ updateOrderStatus(orders[1].id, 'Selesai');
 
 deleteOrder(orders[0].id);
 
-// console.log(orders);
+displayOrders(orders);
 
 /**
  * Output yang diharapkan:
